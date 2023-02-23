@@ -1,0 +1,169 @@
+<head>
+  <title>JOB FIT ANALYSIS</title>
+  <style>
+    body {
+      background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      padding: 2%;
+      width: 50%;
+      margin: 3% auto;
+      border-radius: 10px;
+    }
+
+img.logo {
+      
+      
+      margin-top: 0%; /* Add margin to the top of the heading */
+      width: 350px; /* set a width for the logo */
+      height: 50px; /* set a height for the logo */
+      position: absolute; /* Position the logo in the top left corner */
+      top: 0;
+      left: 0;
+  }
+
+  .header a {
+      font-size: 1.5em; /* Increase font size for the paragraph */
+      color: #ffffff; /* Change the text color to match the background */
+      text-decoration: none; /* Remove underline from the link */
+      background-color: transparent; /* Change background color of the link */
+      border: none; /* Remove the border of the link */
+      font-weight: bold; /* Make the link text bold */
+      transition: 0.2s; /* Add transition effect to the link */
+  }
+
+  /* Add styling for the link when hovered */
+  .header a:hover {
+      color: #c56d01fc; /* Change the text color to dark blue when hovered */
+  }
+
+  /* Add styling for the header */
+  .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 35px;
+}
+
+
+  /* Add styling for the buttons */
+  .header a {
+      margin-left: 30px; /* add margin to the left of each button */
+  }
+
+  
+  .percentage-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(183, 225, 32);
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  bottom: 8cm;
+}
+
+      .percentage-track {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0, 200px, 200px, 100px);
+  }
+
+  .percentage-fill {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(28, 132, 235);
+    transform: rotate(270deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0, 100px, 200px, 0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .percentage-value {
+    font-size: 72px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .percentage-label {
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h1 {
+  margin-top: 4cm;
+  margin-left: auto;
+  margin-right: 680px;
+  text-align: right;
+}
+
+  #analysis {
+            margin: 0 auto;
+            width: 35%;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            text-align: left;
+        }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="{{ url_for('home') }}">
+        <img src="{{url_for('static', filename='buildin/LOGO2.JPG')}}" class="logo">
+    </a>
+    
+    <a href="{{ url_for('analysis') }}">Analysis</a>
+    <a href="{{ url_for('generate') }}">Cover Letter</a>
+    <a href="{{ url_for('services') }}">Questions</a>
+    <a href="{{ url_for('products') }}">Resume</a>
+    <a href="{{ url_for('signup') }}">Sign Up</a>
+</div>
+
+<h1 style="margin-top: 4cm;">Job Fit Analysis</h1>
+  <p id="analysis">{{ analysis }}</p>
+  <div class="percentage-circle">
+    <div class="percentage-track">
+      <div class="percentage-fill" id="percentageFill"></div>
+    </div>
+    <div class="percentage-value" id="percentageValue"></div>
+    <div class="percentage-label">Overall Suitability</div>
+  </div>
+  <script>
+    const analysisText = document.getElementById("analysis").innerText;
+    const match = analysisText.match(/\d+%/);
+    if (match) {
+      const percentage = parseInt(match[0].replace("%", ""));
+      document.getElementById("percentageValue").innerText = match[0];
+      document.getElementById("percentageFill").style.transform = `rotate(${(percentage / 100) * 360}deg)`;
+    } else {
+      console.error("No match found in analysis text");
+    }
+  </script>
+</body>
+</html>  

@@ -1,0 +1,337 @@
+<head>
+    <title></title>
+    <style>
+
+img.logo {
+        
+        
+        margin-top: 0%; /* Add margin to the top of the heading */
+        width: 350px; /* set a width for the logo */
+        height: 50px; /* set a height for the logo */
+        position: absolute; /* Position the logo in the top left corner */
+        top: 0;
+        left: 0;
+    }
+
+    .header a {
+        font-size: 1.5em; /* Increase font size for the paragraph */
+        color: #f6ecec; /* Change the text color to match the background */
+        text-decoration: none; /* Remove underline from the link */
+        background-color: transparent; /* Change background color of the link */
+        border: none; /* Remove the border of the link */
+        font-weight: bold; /* Make the link text bold */
+        transition: 0.2s; /* Add transition effect to the link */
+        margin-top: 10px;
+    }
+
+    /* Add styling for the link when hovered */
+    .header a:hover {
+        color: #c56d01fc; /* Change the text color to dark blue when hovered */
+    }
+
+    /* Add styling for the header */
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+
+    /* Add styling for the buttons */
+    .header a {
+        margin-left: 30px; /* add margin to the left of each button */
+    }
+    
+    /* Add styling for the header */
+ 
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+    
+            
+
+            
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+
+    
+
+        /* Add some hover effect for the button */
+        input[type="submit"] {
+            background-color: #00cc99;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f1f6f4;
+        }
+
+        /* Style the h1 title */
+       
+    }
+
+
+        .card
+        {
+            position: absolute;
+            width: 800px;
+            height: 350px;
+            right: 38%;
+            top: 50%;
+            background: #000235(255, 255, 255);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            transition: 0.5s;
+            transform: translate(50%, -50%);
+            
+        }
+
+        .card .circle
+        {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+          
+
+       }
+
+.card .circle::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000235;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+    
+}
+
+.card:hover .circle:before
+{
+    background: #ffffffd6;
+    clip-path: circle(400px at center);
+}
+    
+.card img
+{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 300px;
+    pointer-events: none;
+}
+ 
+.card:hover img
+{
+    left: 72%;
+    height: 500px; 
+}
+
+.card .content
+{
+    position: relative;
+    width: 40%;
+    left: 0%;
+    padding: 20px 20px 20px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card .content h2{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 30px;
+}
+
+.card .content p {
+    color: rgb(5, 5, 5);
+    margin: 0;
+    padding: 1px;
+    font-weight: bold;
+    display: block;
+}
+
+
+.card .content a
+{
+    position: relative;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    margin-top: 40px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (max-widthL: 991px)
+{
+    .card
+    {
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .card:hover
+    {
+        height: 600px;
+    }
+    .card .content
+    {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+.card:hover img;
+{
+    top: 70%;
+    left: 50%;
+    height: 320px;
+}
+
+    }
+
+    
+    h1 {
+color: rgb(245, 235, 235);
+text-align: left;
+margin-top: 80px;
+margin-left: 10px;
+padding-left: 0;
+position: absolute;
+top: 60px;
+left: 0;
+}
+
+form {
+text-align: left;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 110px;
+margin-left: 10px;
+padding-left: 0;
+position: absolute;
+top: 110px;
+left: 0;
+}
+
+label {
+color: rgb(255, 255, 255);
+margin-bottom: 10px;
+}
+
+textarea {
+padding: 10px;
+border-radius: 5px;
+margin-top: 20px;
+margin-bottom: 20px;
+width: 90%;
+height: 50px;
+color: rgb(0, 0, 0);
+}
+
+input[type="submit"] {
+
+position: relative;
+text-align: center;
+width: 250px;
+font-size: 20px;
+font-family: poppins;
+font-weight: 400;
+background-color: #a80909(56, 182, 190);
+color: #0a0a0a;
+padding: 20px;
+border-radius: 10px;
+border: 5px solid #eeeeef;
+text-transform: uppercase;
+letter-spacing: 15px;
+cursor: pointer;
+margin-top: 20px;
+transition: 1.5s;
+}
+
+
+input[type="submit"]:hover {
+box-shadow: 0 5px 35px 0 #06e2f2 inset, 0 5px 35px 0 #06e2f2,
+0 5px 35px 0 #06e2f2 inset, 0 5px 35px 0 #06e2f2;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Cover Letter Generator</h1>
+    <form method="POST" action="{{ url_for('generate') }}">
+        <label for="job_requirements">Job Requirements:</label>
+        <textarea name="job_requirements" id="job_requirements"></textarea>
+        <br>
+        <label for="resume_keywords">Work experience:</label>
+        <textarea name="resume_keywords" id="resume_keywords"></textarea>
+        <br><br>
+        <input type="submit" value="Generate">
+    </form>
+    <div class="header">
+        <a href="{{ url_for('home') }}">
+            <img src="{{url_for('static', filename='buildin/LOGO2.JPG')}}" class="logo">
+        </a>
+        
+        <a href="{{ url_for('analysis') }}">Analysis</a>
+        <a href="{{ url_for('generate') }}">Cover Letter</a>
+        <a href="{{ url_for('services') }}">Questions</a>
+        <a href="{{ url_for('products') }}">Resume</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+    
+
+    <div class="card">
+    <div class="circle"></div>
+    <div class="content">
+        <h2>COVER LETTER</h2>
+        <p>     Copy paste the job requirements</p>
+        <p>     Add resume keywords/skills</p>
+        <p>     Get Professional cover letter </p>
+        <p>     for every job application</p>
+        <p></p>
+        <a href="#">COVER LETTER</a>
+    </div>
+    <img src="{{url_for('static', filename='buildin/Other 07.png')}}">
+</div>
+  
+</body>

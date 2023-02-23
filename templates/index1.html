@@ -1,0 +1,72 @@
+<head>
+    <title></title>
+    <style>
+        /* Add font and font-size */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: black;
+            background-image: url({{url_for('static', filename='buildin/21.jpg')}});
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Center the text in the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the labels and textareas */
+        label {
+            color: rgb(159, 6, 6);
+            margin-bottom: 10px;
+        }
+
+        /* Add some padding and border-radius to the textareas */
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 30%;
+        }
+
+        /* Add some hover effect for the button */
+        input[type="submit"] {
+            background-color: #eed707;
+            color: rgb(7, 0, 0);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #009966;
+        }
+
+        /* Style the h1 title */
+        h1 {
+            color: rgb(246, 246, 246);
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cover Letter Generator</h1>
+    <form method="POST" action="{{ url_for('generate') }}">
+        <label for="job_requirements">Job Requirements:</label>
+        <textarea name="job_requirements" id="job_requirements"></textarea>
+        <br>
+        <label for="resume_keywords">Resume Keywords:</label>
+        <textarea name="resume_keywords" id="resume_keywords"></textarea>
+        <br><br>
+        <input type="submit" value="Generate Cover Letter">
+    </form>
+</body>

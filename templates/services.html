@@ -1,0 +1,135 @@
+<!-- services.html -->
+
+<head>
+    <title>GENERATE INTERVIEW QUESTIONS</title>
+    <style>
+
+img.logo {
+        
+        
+        margin-top: 0%; /* Add margin to the top of the heading */
+        width: 350px; /* set a width for the logo */
+        height: 50px; /* set a height for the logo */
+        position: absolute; /* Position the logo in the top left corner */
+        top: 0;
+        left: 0;
+    }
+
+    .header a {
+        font-size: 1.5em; /* Increase font size for the paragraph */
+        color: #e9d9d9; /* Change the text color to match the background */
+        text-decoration: none; /* Remove underline from the link */
+        background-color: transparent; /* Change background color of the link */
+        border: none; /* Remove the border of the link */
+        font-weight: bold; /* Make the link text bold */
+        transition: 0.2s; /* Add transition effect to the link */
+    }
+
+    /* Add styling for the link when hovered */
+    .header a:hover {
+        color: #c56d01fc; /* Change the text color to dark blue when hovered */
+    }
+
+    /* Add styling for the header */
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+
+    /* Add styling for the buttons */
+    .header a {
+        margin-left: 30px; /* add margin to the left of each button */
+    }
+        /* Add font and font-size */
+        body {
+            background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* Center the text in the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style the labels and textareas */
+        label {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        /* Add some padding and border-radius to the textareas */
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 50%;
+        }
+
+        /* Add some hover effect for the button */
+        input[type="submit"] {
+            background-color: #00cc99;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #009966;
+        }
+
+        /* Style the h1 title */
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Add background color to the body */
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1 style="margin-top: 4cm;">INTERVIEW QUESTIONS GENERATOR</h1>
+    <form method="POST" action="{{ url_for('generate_questions') }}">
+        <label for="job_requirements">Job Requirements:</label>
+        <textarea name="job_requirements" id="job_requirements"></textarea>
+    
+        <br>
+        <input type="submit" value="Generate interview quesions">
+    </form>
+
+<div class="header">
+    <a href="{{ url_for('home') }}">
+        <img src="{{url_for('static', filename='buildin/LOGO2.JPG')}}" class="logo">
+    </a>
+    
+    <a href="{{ url_for('analysis') }}">Analysis</a>
+    <a href="{{ url_for('generate') }}">Cover Letter</a>
+    <a href="{{ url_for('services') }}">Questions</a>
+    <a href="{{ url_for('products') }}">Resume</a>
+    <a href="{{ url_for('signup') }}">Sign Up</a>
+</div>
+
+</body>

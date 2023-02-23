@@ -1,0 +1,129 @@
+<head>
+  <title>JOB ANALYSIS</title>
+  <style>
+    img.logo {
+      margin-top: 0%;
+      width: 350px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+.header a {
+  font-size: 1.5em;
+  color: #e9d9d9;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.header a:hover {
+  color: #c56d01fc;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 35px;
+}
+
+.header a {
+  margin-left: 30px;
+}
+
+body {
+  background: linear-gradient(to right, #1CB5E0, #000046);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+form {
+display: flex;
+flex-direction: column; /* Change this to column */
+align-items: center;
+}
+
+label {
+color: white;
+margin-bottom: 10px;
+display: block; /* Change from inline-block /
+width: 100%; / Change from 30% */
+}
+
+textarea {
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 20px;
+width: 100%; /* Change from 50% */
+}
+
+input[type="submit"] {
+  background-color: #00cc99;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #009966;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+  </style>
+</head>
+<body>
+ 
+
+  <h1 style="margin-top: 4cm;">Job Fit Analysis</h1>
+  <form action="{{ url_for('generate_analysis') }}" method="post">
+    <div>
+      <label for="job_requirements" style="display: inline-block;">Job Requirements:</label>
+      <textarea name="job_requirements" id="job_requirements"></textarea>
+      
+    </div>
+    <div>
+        <label for="work_experience" style="display: inline-block;">Work Experience:</label>
+        <textarea id="work_experience" name="work_experience"></textarea>
+    </div>
+    <div>
+        <label for="resume_keywords" style="display: inline-block;">Resume Keywords:</label>
+        <textarea id="resume_keywords" name="resume_keywords"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+  </form>
+  <div class="header">
+    <a href="{{ url_for('home') }}">
+        <img src="{{url_for('static', filename='buildin/LOGO2.JPG')}}" class="logo">
+    </a>
+    
+    <a href="{{ url_for('analysis') }}">Analysis</a>
+    <a href="{{ url_for('generate') }}">Cover Letter</a>
+    <a href="{{ url_for('services') }}">Questions</a>
+    <a href="{{ url_for('products') }}">Resume</a>
+    <a href="{{ url_for('signup') }}">Sign Up</a>
+</div>
+
+</body>
+</html>
+
+
+
